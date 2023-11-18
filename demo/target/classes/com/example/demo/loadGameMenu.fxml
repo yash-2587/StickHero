@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="anchorPane" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="game.willhero.LoadGameMenuController">
+   <ImageView fitHeight="768.0" fitWidth="1024.0" pickOnBounds="true" preserveRatio="true">
+      <Image url="@assets/background.png" />
+   </ImageView>
+   <Group layoutX="10.0" layoutY="10.0">
+      <ImageView fx:id="btnMusic" fitHeight="55.0" fitWidth="55.0" onMouseClicked="#onMusicButtonClick" pickOnBounds="true" preserveRatio="true">
+         <Image url="@assets/btnmusic0.png" />
+      </ImageView>
+      <ImageView fx:id="btnSound" fitHeight="55.0" fitWidth="55.0" layoutX="73.0" onMouseClicked="#onSoundButtonClick" pickOnBounds="true" preserveRatio="true">
+         <Image url="@assets/btnsound0.png" />
+      </ImageView>
+      <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="146.0" onMouseClicked="#onBackButtonClick" pickOnBounds="true" preserveRatio="true">
+         <Image url="@assets/btnback.png" />
+      </ImageView>
+   </Group>
+   <VBox layoutX="99.0" layoutY="232.0" prefHeight="378.0" prefWidth="770.0">
+      <Text onMouseClicked="#onSave1ButtonClick" strokeType="OUTSIDE" strokeWidth="0.0" text="Save 1">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Separator prefWidth="200.0" />
+      <Text onMouseClicked="#onSave2ButtonClick" strokeType="OUTSIDE" strokeWidth="0.0" text="Save 2">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Separator prefWidth="200.0" />
+      <Text onMouseClicked="#onSave3ButtonClick" strokeType="OUTSIDE" strokeWidth="0.0" text="Save 3">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Separator prefWidth="200.0" />
+      <Text onMouseClicked="#onSave4ButtonClick" strokeType="OUTSIDE" strokeWidth="0.0" text="Save 4">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Text>
+      <Separator prefWidth="200.0" />
+   </VBox>
+   <Text fill="#101511" layoutX="213.0" layoutY="195.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Load Game" textAlignment="CENTER" wrappingWidth="500.52734375">
+      <font>
+         <Font name="System Bold" size="72.0" />
+      </font>
+   </Text>
+</AnchorPane>
