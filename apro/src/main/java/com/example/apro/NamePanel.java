@@ -5,9 +5,6 @@ package com.example.apro;
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by yashardabiran on 6/29/15.
- */
 public class NamePanel extends JPanel {
     private static final int BORDERS_LENGTH = 2;
     private static final int MAX_SIZE = 100;

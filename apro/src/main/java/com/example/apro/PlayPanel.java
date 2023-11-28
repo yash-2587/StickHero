@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 public class PlayPanel extends JPanel {
     private static final int STICK_WIDTH = 3;
-    private static final int RECT_HEIGHT = 220;
+    private static final int RECT_HEIGHT = 100;
     private static final int RECT_START = 50;
 
     private GameEngine engine;
@@ -243,6 +243,6 @@ public class PlayPanel extends JPanel {
         g2d.setFont(new Font("Trattatello", Font.PLAIN, 40));
         g2d.setColor(Color.black);
         g2d.drawString("Score : " + engine.getScore(), 30, 70);
-        g2d.drawString("Mushroom : " + engine.getcherryNum(), 270, 70);
+        g2d.drawString("Cherry : " + engine.getcherryNum(), 270, 70);
     }
 }

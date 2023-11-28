@@ -43,7 +43,7 @@ public class StartPanel extends JPanel {
         g2d.drawImage(Images.background, -450, 0, null);
         g2d.setFont(new Font("Trattatello", Font.BOLD, 100));
         g2d.setColor(Color.darkGray);
-        g2d.drawString("STICK", 125, 120);
+        g2d.drawString("STICK", 100, 120);
         g2d.drawString("HERO", 130, 200);
     }
 }
