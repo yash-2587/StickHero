@@ -51,3 +51,4 @@ public class GameOverPanel extends JPanel {
         g2d.drawString("CHERRY : " + engine.getcherryNum(), 40, 330);
     }
 }
+

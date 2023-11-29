@@ -1,14 +1,9 @@
 package com.example.apro;
 
-//import gameController.GameController;
-//import gameEngine.GameEngine;
 
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by yashardabiran on 6/29/15.
- */
 public class GamePanel extends JPanel{
     private PlayPanel playPanel;
     private StartPanel startPanel;

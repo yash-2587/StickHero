@@ -6,7 +6,7 @@ import java.awt.*;
 import java.awt.geom.AffineTransform;
 public class PlayPanel extends JPanel {
     private static final int STICK_WIDTH = 3;
-    private static final int RECT_HEIGHT = 100;
+    private static final int RECT_HEIGHT = 220;
     private static final int RECT_START = 50;
 
     private GameEngine engine;
@@ -152,21 +152,7 @@ public class PlayPanel extends JPanel {
             g2d.scale(1, -1);
         }
         if (rotateDegree == 90 && marioX < dest) {
-            switch (imageCycle) {
-                case 0:
-                    g2d.drawImage(Images.walk1, 0, -Images.MARIO_HEIGHT, null);
-                    break;
-                case 1:
-                    g2d.drawImage(Images.walk2, 0, -Images.MARIO_HEIGHT, null);
-                    break;
-                case 2:
-                    g2d.drawImage(Images.walk3, 0, -Images.MARIO_HEIGHT, null);
-                    break;
-                case 3:
-                    g2d.drawImage(Images.walk4, 0, -Images.MARIO_HEIGHT, null);
-                    break;
-            }
-
+            g2d.drawImage(Images.hero, 0, -Images.MARIO_HEIGHT, null);
             cycleCnt++;
             cycleCnt %= 8;
             if (cycleCnt % 8 == 0) {
@@ -175,7 +161,7 @@ public class PlayPanel extends JPanel {
             }
 
         } else {
-            g2d.drawImage(Images.stand, 0, -Images.MARIO_HEIGHT, null);
+            g2d.drawImage(Images.hero, 0, -Images.MARIO_HEIGHT, null);
         }
 
         g2d.setTransform(old);
@@ -223,7 +209,7 @@ public class PlayPanel extends JPanel {
 
     private void checkForcherryEaten() {
         if (controller.isUpsideDown() && marioX + Images.MARIO_WIDTH >= RECT_START + firstWidth + engine.getcherryPos()
-                            && marioX <= RECT_START + firstWidth + engine.getcherryPos() + 25)
+                && marioX <= RECT_START + firstWidth + engine.getcherryPos() + 25)
             ischerryEaten = true;
     }
 
@@ -246,3 +232,4 @@ public class PlayPanel extends JPanel {
         g2d.drawString("Cherry : " + engine.getcherryNum(), 270, 70);
     }
 }
+
