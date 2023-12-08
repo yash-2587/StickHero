@@ -14,7 +14,7 @@ public class StartPanel extends Pane {
     private Button button;
 
     private Button butmusic;
-    private Button butback;
+    private static Button butback;
 
     public StartPanel(GameController controller) {
         this.controller = controller;
@@ -65,6 +65,7 @@ public class StartPanel extends Pane {
         butback.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) { // Correct import for ActionEvent
+                System.out.println("Exit");
                 controller.onExitButtonClick();
             }
         });
@@ -142,5 +143,7 @@ public class StartPanel extends Pane {
         getChildren().add(menu);
 
     }
+
+
 }
 

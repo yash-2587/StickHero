@@ -5,7 +5,7 @@ import java.util.Random;
 public class GameEngine {
     public static final int MIN_DISTANCE = 100;
     public static final int MAX_DISTANCE = 250;
-    private String name;
+
     private boolean gameOver;
     private boolean moving;
     private Platform first, second;
@@ -16,9 +16,6 @@ public class GameEngine {
     private int cherryNum;
     private int cherryPos;
 
-    public GameEngine() {
-        this.name = name;
-    }
 
     public void init() {
         first = new Platform();
@@ -103,9 +100,6 @@ public class GameEngine {
         return stickLength;
     }
 
-    public String getName() {
-        return name;
-    }
 
     public int getScore() {
         return score;
@@ -122,6 +116,7 @@ public class GameEngine {
     public void decrementCherry(){
         cherryNum -= 3;
     }
+
     public int getcherryNum() {
         return cherryNum;
     }

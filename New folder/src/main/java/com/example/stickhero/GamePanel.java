@@ -7,7 +7,6 @@ import javafx.scene.layout.Pane;
 public class GamePanel extends BorderPane {
     private PlayPanel playPanel;
     private StartPanel startPanel;
-    private NamePanel namePanel;
     private GameOverPanel gameOverPanel;
 
     private GameEngine engine;
@@ -17,7 +16,6 @@ public class GamePanel extends BorderPane {
         this.engine = engine;
         this.controller = controller;
 
-        namePanel = new NamePanel(engine);
         startPanel = new StartPanel(controller);
         playPanel = new PlayPanel(engine, controller);
 
@@ -26,7 +24,6 @@ public class GamePanel extends BorderPane {
         playPanel.setOnMouseReleased(controller);
 
         setCenter(startPanel);
-        setBottom(namePanel);
 
     }
 

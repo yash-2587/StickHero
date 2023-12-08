@@ -15,6 +15,7 @@ import javafx.scene.text.Text;
 public class GameOverPanel extends Pane {
     private GameEngine engine;
     Button button;
+    Button butback;
 
     public GameOverPanel(final GameEngine engine, final GameController controller) {
         this.engine = engine;
@@ -22,11 +23,10 @@ public class GameOverPanel extends Pane {
         button = new Button();
         button.setStyle("-fx-background-color: transparent;");
         button.setGraphic(new ImageView(Images.replay));
-        button.setOnMousePressed(new EventHandler<MouseEvent>() {
+        button.setOnAction(new EventHandler<ActionEvent>() {
             @Override
-            public void handle(MouseEvent mouseEvent) {
-                System.out.println("Replay");
-                controller.replay();
+            public void handle(ActionEvent event) { // Correct import for ActionEvent
+                controller.actionPerformed(event);
             }
         });
 
@@ -40,7 +40,8 @@ public class GameOverPanel extends Pane {
         button.setGraphic(imageView);
         getChildren().add(button);
 
-        Button butback = new Button();
+
+        butback = new Button();
         ImageView imgback = new ImageView(Images.back);
         imgback.setFitWidth(80); // Set the preferred width of the image
         imgback.setFitHeight(80); // Set the preferred height of the image
@@ -48,6 +49,12 @@ public class GameOverPanel extends Pane {
         butback.setStyle("-fx-background-color: transparent;");
         butback.setGraphic(imgback);
 
+        butback.setOnAction(new EventHandler<ActionEvent>() {
+            @Override
+            public void handle(ActionEvent event) {
+                controller.onExit();
+            }
+        });
         butback.setPrefSize(80, 80);
         butback.setLayoutX( 300 );
         butback.setLayoutY(400);
@@ -60,7 +67,13 @@ public class GameOverPanel extends Pane {
         imghome.setPreserveRatio(true); // Preserve the aspect ratio while resizing
         buthome.setStyle("-fx-background-color: transparent;");
         buthome.setGraphic(imghome);
-
+        button.setOnMousePressed(new EventHandler<MouseEvent>() {
+            @Override
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("Replay");
+                controller.replay();
+            }
+        });
         buthome.setPrefSize(80, 80);
         buthome.setLayoutX( 100 );
         buthome.setLayoutY(400);
