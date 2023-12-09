@@ -104,9 +104,7 @@ public class GameController implements EventHandler<MouseEvent> {
     public  void onExitButtonClick() {
         System.exit(0);
     }
-    public  void onExit() {
-        System.exit(0);
-    }
+
 
     public void actionPerformed(ActionEvent event) {
         panel.goToGame();
