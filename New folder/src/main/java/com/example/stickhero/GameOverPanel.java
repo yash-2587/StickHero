@@ -25,6 +25,7 @@ public class GameOverPanel extends Pane {
         button.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
+                 Audio.changeToMenu();
                 controller.replay();
             }
         });
@@ -48,11 +49,11 @@ public class GameOverPanel extends Pane {
         butback.setStyle("-fx-background-color: transparent;");
         butback.setGraphic(imgback);
 
-        butback.setOnAction(new EventHandler<ActionEvent>() {
+         butback.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(ActionEvent event) {
-                Audio.changeToMenu();
-                controller.onExit();
+            public void handle(MouseEvent mouseEvent) {
+                System.out.println("Exit");
+                controller.onExitButtonClick();
             }
         });
         butback.setPrefSize(80, 80);
