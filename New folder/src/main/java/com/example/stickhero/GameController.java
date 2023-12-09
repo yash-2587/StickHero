@@ -114,12 +114,5 @@ public class GameController implements EventHandler<MouseEvent> {
     public void pause(ActionEvent event) {
         panel.gotopause();
     }
-    public void onSoundButtonClick() {
-        Audio.onSoundButtonClick(btnSound);
-    }
-
-    public void onMusicButtonClick() {
-        Audio.onMusicButtonClick(btnMusic,true);
-    }
 
 }

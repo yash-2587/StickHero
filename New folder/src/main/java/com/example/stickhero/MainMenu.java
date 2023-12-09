@@ -10,7 +10,8 @@ import javafx.scene.layout.*;
 public class MainMenu extends Pane {
     private final GameController controller;
     private Button button;
-
+    private int musiccount=0;
+    private int soundcount=0;
     private Button butmusic;
     private static Button butback;
 
@@ -105,8 +106,15 @@ public class MainMenu extends Pane {
         butmusic.setGraphic(imagView);
 
         butmusic.setOnAction(event -> {
-
-            controller.onMusicButtonClick();
+            musiccount++;
+            if(musiccount%2==0){
+                butmusic.setGraphic(new ImageView(Images.musicoff));
+                Audio.stopMainMenuMusic();
+            }
+            else{
+                butmusic.setGraphic(new ImageView(Images.musicon));
+                Audio.playMainMenuMusic();
+            }
         });
 
 
@@ -124,8 +132,15 @@ public class MainMenu extends Pane {
         butsound.setGraphic(imgsound);
 
         butsound.setOnAction(event -> {
-
-            controller.onSoundButtonClick();
+            soundcount++;
+            if(soundcount%2==0){
+                butsound.setGraphic(new ImageView(Images.soundoff));
+                Audio.stopGameMusic();
+            }
+            else{
+                butsound.setGraphic(new ImageView(Images.soundon));
+                Audio.playGameMusic();
+            }
         });
         butsound.setPrefSize(50, 50);
         butsound.setLayoutX((double) 60);

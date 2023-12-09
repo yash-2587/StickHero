@@ -92,29 +92,6 @@ public class Audio extends Thread{
     }
 
 
-    public static void onSoundButtonClick(ImageView btnSound) {
-        if (Audio.isPlaySound()) {
-            btnSound.setImage(Images.soundoff);
-            Audio.stopSound();
-        }else {
-            btnSound.setImage(Images.soundon);
-            Audio.playSound();
-        }
-        Audio.playButtonSound();
-    }
-
-    public static void onMusicButtonClick(ImageView btnMusic, boolean menuOrGame) {
-        Audio.playButtonSound();
-        if(Audio.isPlayMusic()){
-            btnMusic.setImage(Images.musicoff);
-            Audio.stopMainMenuMusic();
-            Audio.stopGameMusic();
-        }else {
-            btnMusic.setImage(Images.musicon);
-            if(menuOrGame)Audio.playMainMenuMusic();
-            else Audio.playGameMusic();
-        }
-    }
 
     public static void changeToMenu(){
         if(Audio.isPlayMusic()){
