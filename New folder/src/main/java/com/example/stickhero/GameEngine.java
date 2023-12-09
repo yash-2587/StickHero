@@ -52,7 +52,7 @@ public class GameEngine {
             gameOver = true;
     }
 
-    public void nextRectangle() {
+    public void nextPlat() {
         first = second;
         second = new Platform();
         assignDistance();

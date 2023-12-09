@@ -19,14 +19,13 @@ public class GameOverPanel extends Pane {
 
     public GameOverPanel(final GameEngine engine, final GameController controller) {
         this.engine = engine;
-
         button = new Button();
         button.setStyle("-fx-background-color: transparent;");
         button.setGraphic(new ImageView(Images.replay));
-        button.setOnAction(new EventHandler<ActionEvent>() {
+        button.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
-            public void handle(ActionEvent event) { // Correct import for ActionEvent
-                controller.actionPerformed(event);
+            public void handle(MouseEvent mouseEvent) {
+                controller.replay();
             }
         });
 
@@ -52,6 +51,7 @@ public class GameOverPanel extends Pane {
         butback.setOnAction(new EventHandler<ActionEvent>() {
             @Override
             public void handle(ActionEvent event) {
+                Audio.changeToMenu();
                 controller.onExit();
             }
         });
@@ -67,10 +67,10 @@ public class GameOverPanel extends Pane {
         imghome.setPreserveRatio(true); // Preserve the aspect ratio while resizing
         buthome.setStyle("-fx-background-color: transparent;");
         buthome.setGraphic(imghome);
-        button.setOnMousePressed(new EventHandler<MouseEvent>() {
+        buthome.setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
             public void handle(MouseEvent mouseEvent) {
-                System.out.println("Replay");
+                Audio.changeToMenu();
                 controller.replay();
             }
         });

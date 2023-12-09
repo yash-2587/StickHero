@@ -3,8 +3,6 @@ package com.example.stickhero;
 import javafx.scene.image.Image;
 
 import java.io.File;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 public class Images {
     public static Image background;
@@ -18,6 +16,7 @@ public class Images {
     public static Image home;
     public static Image savegame;
     public static Image back;
+    public static Image pause;
     public static Image instructions;
     public static Image soundon;
     public static Image musicon;
@@ -25,8 +24,8 @@ public class Images {
     public static Image soundoff;
     public static final int BACKGROUND_WIDTH = 500;
     public static final int BACKGROUND_HEIGHT = 600;
-    public static final int MARIO_WIDTH = 25; // or any suitable value
-    public static final int MARIO_HEIGHT = 25; // or any suitable value
+    public static final int HeroWidth = 25;
+    public static final int HeroHeight = 25;
 
     static {
         try {
@@ -62,6 +61,8 @@ public class Images {
             savegame = new Image(file.toURI().toString());
             file = new File("images/btnhome.png");
             home = new Image(file.toURI().toString());
+            file = new File("images/pause.png");
+            pause = new Image(file.toURI().toString());
         } catch (Exception e) {
             e.printStackTrace();
         }

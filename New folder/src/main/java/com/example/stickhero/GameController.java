@@ -10,7 +10,7 @@ import javafx.scene.input.MouseEvent;
 public class GameController implements EventHandler<MouseEvent> {
     public static final int FPS = 100;
     private GameEngine engine;
-    private GamePanel panel;
+    private Game panel;
     private boolean isIncreasing;
     private boolean isRunning;
     public boolean upsideDown;
@@ -18,7 +18,7 @@ public class GameController implements EventHandler<MouseEvent> {
 
     private ImageView btnMusic;
 
-    public void init(GameEngine engine, GamePanel panel) {
+    public void init(GameEngine engine, Game panel) {
         this.engine = engine;
         this.panel = panel;
     }
@@ -42,14 +42,17 @@ public class GameController implements EventHandler<MouseEvent> {
 
 
 
-    public void nextRect(boolean ischerryEaten) {
+    public void nextplatform(boolean ischerryEaten) {
         if (ischerryEaten)
             engine.cherryEaten();
-        engine.nextRectangle();
+        engine.nextPlat();
     }
 
     public void gameOver() {
         panel.gameOver();
+    }
+    public void save(){
+        panel.goToSave();
     }
 
     public void replay() {
@@ -104,6 +107,13 @@ public class GameController implements EventHandler<MouseEvent> {
     public  void onExit() {
         System.exit(0);
     }
+
+    public void actionPerformed(ActionEvent event) {
+        panel.goToGame();
+    }
+    public void pause(ActionEvent event) {
+        panel.gotopause();
+    }
     public void onSoundButtonClick() {
         Audio.onSoundButtonClick(btnSound);
     }
@@ -111,10 +121,5 @@ public class GameController implements EventHandler<MouseEvent> {
     public void onMusicButtonClick() {
         Audio.onMusicButtonClick(btnMusic,true);
     }
-    public void actionPerformed(ActionEvent event) {
-        panel.goToGame();
-    }
-    public void instruct(ActionEvent event) {
-        panel.gotoinstruct();
-    }
+
 }
